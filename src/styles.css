@@ -1,0 +1,174 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #17007e;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-rows: 1fr repeat(3, 3fr);
+  gap: 10px;
+  padding: 10px;
+  height: calc(100vh - 20px);
+  /* Adjusted for padding */
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 90%;
+  background-color: #070029;
+}
+
+.bar-row-item {
+  /*background-color: #15094d; /*只是为了显示组件大小的，之后去掉*/
+  margin: 1vh;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.bar-row-item-icon {
+  display: flex;
+  justify-content: center;
+  /*width: 100%;
+  /*overflow: hidden;
+  /*background-color: #12006d; */
+}
+
+.bar-row-item-icon img {
+  margin: 5px;
+  /*object-fit: cover;*/
+}
+
+.bar-row-item-content {
+  margin-left: 0.5vw;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 5fr 5fr 1fr;
+  height: 100%;
+}
+
+.bar-row-item-content-name {
+  /*background-color: #12006d; /*只是为了显示组件大小的，之后去掉*/
+  display: flex;
+  align-items: last baseline;
+  justify-content: left;
+  font-family: '宋体', sans-serif;
+  /* 指定字体 */
+  font-weight: 600;
+  /* 非常粗的字体 */
+  letter-spacing: 0.7vw;
+  /* 字母间距增加 */
+  font-size: 1.4vh;
+  /* 设置字体大小 */
+  color: white;
+  /* 字体颜色 */
+}
+
+.bar-row-item-content-container {
+  /*background-color: #12006d; /*只是为了显示组件大小的，之后去掉*/
+  display: flex;
+  align-items: last baseline;
+}
+
+.bar-row-item-content-number {
+  /*background-color: #2a1883; /*只是为了显示组件大小的，之后去掉*/
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
+  font-family: '宋体', sans-serif;
+  /* 指定字体 */
+  font-size: 1.5vh;
+  /* 设置字体大小 */
+  font-weight: 900;
+  /* 非常粗的字体 */
+  letter-spacing: 1.2vw;
+  /* 字母间距增加 */
+  color: white;
+  /* 字体颜色 */
+  text-shadow:
+    3px 3px 0 #000,
+    /* 右下黑色阴影 */
+    -1px -1px 0 #000,
+    /* 左上黑色阴影 */
+    1px -1px 0 #000,
+    /* 右上黑色阴影 */
+    -1px 1px 0 #000;
+  /* 左下黑色阴影 */
+}
+
+.bar-row-item-content-unit {
+  /*background-color: #2e0fc7; /*只是为了显示组件大小的，之后去掉*/
+  display: flex;
+  align-items: last baseline;
+  justify-content: left;
+  font-family: '黑体', sans-serif;
+  /* 指定字体 */
+  font-size: 1.2vh;
+  /* 设置字体大小 */
+  color: blue;
+  /* 字体颜色 */
+}
+
+.top-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+}
+
+.middle-row,
+.bottom-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.view-container {
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+  background-color: #0b003d;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.title-bar {
+  height: 100%;
+  /*background-color: #291e5c;*/
+}
+
+.view-title {
+  position: relative;
+  color: rgb(196, 235, 247); /* 标题文字颜色 */
+  /*background-color: #241b47;*/
+  height: 100%;
+}
+
+.view-title img {
+  height: 100%;
+  width: auto; /* 自动调整宽度以保持图片比例 */
+  object-fit: contain; /* 用 contain 保证图片不裁剪，用 cover 可以填满但可能裁剪 */
+  position: absolute; /* 如果您需要在图片上放置文本 */
+  /*background-color: #351aad;*/
+}
+
+.view-title h1 {
+  font-size: 2.5vh;
+  position: absolute; /* 绝对定位 */
+  top: 40%; /* 垂直居中 */
+  left: 0%; /* 在这里调整水平位置 */
+  transform: translate(0%, -50%); /* 精确居中 */
+  margin: 0; /* 去除默认的 margin */
+  text-shadow:
+    4px 4px 0 #102580e0,
+    /* 右下黑色阴影 */
+    -2px -2px 0 #102580e0,
+    /* 左上黑色阴影 */
+    2px -2px 0 #102580e0,
+    /* 右上黑色阴影 */
+    -2px 2px 0 #102580e0;
+  /* 左下黑色阴影 */
+}
