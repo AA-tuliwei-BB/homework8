@@ -26,6 +26,9 @@ function render_1_2(data) {
             legend: {
                 data: ['闵行校区主馆', '包玉刚图书馆', '李政道图书馆', '徐汇社科阅览室'],
                 icon: 'line',
+                textStyle: {
+                    color: 'rgba(200, 200, 200, 0.8)'
+                }
             },
             grid: {
                 left: '3%',
@@ -36,10 +39,16 @@ function render_1_2(data) {
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
+                axisLabel: {
+                    color: 'rgba(200, 200, 200, 0.8)'
+                },
                 data: data.map(element => element['logTime'].split(' ')[1])
             },
             yAxis: {
-                type: 'value'
+                type: 'value',
+                axisLabel: {
+                    color: 'rgba(200, 200, 200, 0.8)'
+                },
             },
             series: [
                 {
@@ -75,6 +84,10 @@ function render_1_2(data) {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        // 窗口大小改变时，重置图表大小
+        window.addEventListener('resize', function () {
+            myChart.resize();
+        });
     }
 }
 

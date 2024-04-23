@@ -28,6 +28,9 @@ function render_1_3(data) {
                 formatter: function (name) {
                     // 在这里我们通过 name 参数找到对应数据项的 value
                     return `${name}\t${data.get(name)}人`;
+                },
+                textStyle: {
+                    color: 'rgba(255, 255, 255, 0.8)'
                 }
             },
             series: [
@@ -52,6 +55,10 @@ function render_1_3(data) {
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        // 窗口大小改变时，重置图表大小
+        window.addEventListener('resize', function () {
+            myChart.resize();
+        });
     }
 }
 

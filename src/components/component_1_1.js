@@ -3,14 +3,14 @@ async function render_1_1(data02, data01) {
     const count01 = new Map();
     const count02 = new Map();
     data01.forEach(element => {
-        if (element['学院'] && element['事件类型'] === '借阅' && element['发生时间'].startsWith('2023')) {
-            count01.set(element['学院'], (count01.get(element['学院']) || 0) + 1);
-        }
+                if (element['学院'] && element['事件类型'] === '借阅' && element['发生时间'].startsWith('2023')) {
+                    count01.set(element['学院'], (count01.get(element['学院']) || 0) + 1);
+                }
     });
     data02.forEach(element => {
-        if (element['Department'] && element['EventDate'].endsWith('2023')) {
-            count02.set(element['Department'], (count02.get(element['Department']) || 0) + 1);
-        }
+                if (element['Department'] && element['EventDate'].endsWith('2023')) {
+                    count02.set(element['Department'], (count02.get(element['Department']) || 0) + 1);
+                }
     });
     render_chart(getTop(count02, 5), count01);
 
@@ -32,6 +32,7 @@ async function render_1_1(data02, data01) {
 
         // 指定图表的配置项和数据
         let option = {
+            
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -39,7 +40,10 @@ async function render_1_1(data02, data01) {
                 }
             },
             legend: {
-                data: ['入馆人数', '借阅量']
+                data: ['入馆人数', '借阅量'],
+                textStyle: {
+                    color: 'rgba(255, 255, 255, 0.8)'
+                }
             },
             grid: {
                 left: '3%',
@@ -50,11 +54,17 @@ async function render_1_1(data02, data01) {
             },
             xAxis: {
                 type: 'value',
-                boundaryGap: [0, 0.01]
+                boundaryGap: [0, 0.01],
+                axisLabel: {
+                    color: 'rgba(200, 200, 200, 0.8)'
+                }
             },
             yAxis: {
                 type: 'category',
-                data: Array.from(data.keys()).reverse()
+                data: Array.from(data.keys()).reverse(),
+                axisLabel: {
+                    color: 'rgba(200, 200, 200, 0.8)'
+                }
             },
             series: [
                 {
