@@ -11,9 +11,13 @@ import render_3_3 from './components/component_3_3.js';
 // main.js
 document.addEventListener("DOMContentLoaded", function () {
     render_bar();
-    loadData02().then(data => {
-        render_1_1(data.RECORDS);
-        render_1_3(data.RECORDS);
+    loadData02().then(data02 => {
+        render_1_3(data02.RECORDS);
+        loadData01().then(data01 => {
+            render_1_1(data02.RECORDS, data01.RECORDS);
+        }).catch(error => {
+            console.error('Failed to process data:', error);
+        });
     }).catch(error => {
         console.error('Failed to process data:', error);
     });
@@ -25,6 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
     render_3_2();
     render_3_3();
 });
+
+async function loadData01() {
+    try {
+        const response = await fetch('./data/01-2023年全年图书借阅预约归还等数据-更新.json');
+        return await response.json();
+    } catch (error) {
+        return console.error('Error loading JSON:', error);
+    }
+}
 
 async function loadData02() {
     try {

@@ -172,3 +172,9 @@ html {
     -2px 2px 0 #102580e0;
   /* 左下黑色阴影 */
 }
+
+.view-content {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
