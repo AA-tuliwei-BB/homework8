@@ -1,4 +1,4 @@
-function render_1_1(data02, data01) {
+async function render_1_1(data02, data01) {
     console.log('render_1_1', data02[0]);
     const count01 = new Map();
     const count02 = new Map();
@@ -31,7 +31,7 @@ function render_1_1(data02, data01) {
         let myChart = echarts.init(content);
 
         // 指定图表的配置项和数据
-        var option = {
+        let option = {
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
