@@ -11,9 +11,13 @@ import render_3_3 from './components/component_3_3.js';
 // main.js
 document.addEventListener("DOMContentLoaded", function () {
     render_bar();
-    render_1_1();
+    loadData02().then(data => {
+        render_1_1(data.RECORDS);
+        render_1_3(data.RECORDS);
+    }).catch(error => {
+        console.error('Failed to process data:', error);
+    });
     render_1_2();
-    render_1_3();
     render_2_1();
     render_2_2();
     render_2_3();
@@ -21,3 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
     render_3_2();
     render_3_3();
 });
+
+async function loadData02() {
+    try {
+        const response = await fetch('./data/02-2023年全年入馆数据.json');
+        return await response.json();
+    } catch (error) {
+        return console.error('Error loading JSON:', error);
+    }
+}
