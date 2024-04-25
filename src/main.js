@@ -29,19 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
     render_2_1();
     render_2_2();
     render_2_3();
+    
     loadData03().then(data03 => {
-        loadData04().then(data04 => {
-            render_3_1(data03, data04);
-    }).catch(error => {
-        console.error('Failed to process data:', error);
-    });
-    loadData06().then(data06 => {
-        render_3_2(data06);
+        render_3_2(data03);
     }).catch(error => {
         console.error('Failed to process data:', error);
     });
     loadData07().then(data07 => {
-        render_3_3(data07);
+        render_3_3(data07.data);
     }).catch(error => {
         console.error('Failed to process data:', error);
     });
@@ -78,14 +73,7 @@ async function loadData03() {
     }
 }
 
-async function loadData04() {
-    try {
-        const response = await fetch('./data/04-新书榜单.json');
-        return await response.json();
-    } catch (error) {
-        return console.error('Error loading JSON:', error);
-    }
-}
+
 
 async function loadData05() {
     try {
@@ -96,14 +84,7 @@ async function loadData05() {
     }
 }
 
-async function loadData06() {
-    try {
-        const response = await fetch('./data/06-2021年11月-2024年4月共享办公位预约情况.json');
-        return await response.json();
-    } catch (error) {
-        return console.error('Error loading JSON:', error);
-    }
-}
+
 
 async function loadData07() {
     try {
@@ -114,4 +95,3 @@ async function loadData07() {
     }
 }
 
-})
