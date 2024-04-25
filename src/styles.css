@@ -55,7 +55,7 @@ html {
   display: flex;
   align-items: last baseline;
   justify-content: left;
-  font-family: '宋体', sans-serif;
+  font-family: "宋体", sans-serif;
   /* 指定字体 */
   font-weight: 600;
   /* 非常粗的字体 */
@@ -78,7 +78,7 @@ html {
   display: flex;
   align-items: last baseline;
   justify-content: center;
-  font-family: '宋体', sans-serif;
+  font-family: "宋体", sans-serif;
   /* 指定字体 */
   font-size: 1.5vh;
   /* 设置字体大小 */
@@ -88,14 +88,8 @@ html {
   /* 字母间距增加 */
   color: white;
   /* 字体颜色 */
-  text-shadow:
-    3px 3px 0 #000,
-    /* 右下黑色阴影 */
-    -1px -1px 0 #000,
-    /* 左上黑色阴影 */
-    1px -1px 0 #000,
-    /* 右上黑色阴影 */
-    -1px 1px 0 #000;
+  text-shadow: 3px 3px 0 #000, /* 右下黑色阴影 */ -1px -1px 0 #000,
+    /* 左上黑色阴影 */ 1px -1px 0 #000, /* 右上黑色阴影 */ -1px 1px 0 #000;
   /* 左下黑色阴影 */
 }
 
@@ -104,7 +98,7 @@ html {
   display: flex;
   align-items: last baseline;
   justify-content: left;
-  font-family: '黑体', sans-serif;
+  font-family: "黑体", sans-serif;
   /* 指定字体 */
   font-size: 1.2vh;
   /* 设置字体大小 */
@@ -162,14 +156,9 @@ html {
   left: 0%; /* 在这里调整水平位置 */
   transform: translate(0%, -50%); /* 精确居中 */
   margin: 0; /* 去除默认的 margin */
-  text-shadow:
-    4px 4px 0 #102580e0,
-    /* 右下黑色阴影 */
-    -2px -2px 0 #102580e0,
-    /* 左上黑色阴影 */
-    2px -2px 0 #102580e0,
-    /* 右上黑色阴影 */
-    -2px 2px 0 #102580e0;
+  text-shadow: 4px 4px 0 #102580e0, /* 右下黑色阴影 */ -2px -2px 0 #102580e0,
+    /* 左上黑色阴影 */ 2px -2px 0 #102580e0,
+    /* 右上黑色阴影 */ -2px 2px 0 #102580e0;
   /* 左下黑色阴影 */
 }
 
@@ -177,4 +166,47 @@ html {
   display: flex;
   height: 100%;
   width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.button {
+  margin-left: 8px;
+  border-color: #39c5bb;
+  background-color: #333;
+  color: #fff;
+}
+
+#rankingContainer {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 8px;
+}
+
+#rankingList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 将容器分成四列，每列宽度相等 */
+  grid-gap: 8px; /* 设置容器之间的间距 */
+}
+.rank {
+  color: yellow;
+  font-weight: 500;
+  margin: 0px;
+}
+
+#rankingTime {
+  color: #666;
+  grid-template-columns: 1fr;
+}
+#newBookRankingList {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 4px;
+}
+p {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
