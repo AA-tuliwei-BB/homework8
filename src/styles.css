@@ -174,23 +174,24 @@ html {
 }
 
 .button {
-  margin-left: 8px;
+  margin-left: 1.5vh;
   border-color: #39c5bb;
   background-color: #333;
   color: #fff;
 }
 
 #rankingContainer {
+  margin-top: 2%;
   display: grid;
   grid-template-rows: repeat(2, auto);
   place-items: center;
-  grid-gap: 8px;
+  grid-gap: 1.5vh;
 }
 
 #rankingList {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 将容器分成四列，每列宽度相等 */
-  grid-gap: 8px; /* 设置容器之间的间距 */
+  grid-gap: 1.5vh; /* 设置容器之间的间距 */
 
   text-align: center;
 }
@@ -213,9 +214,15 @@ html {
   color: #666;
   grid-template-columns: 1fr;
 }
+#newBookRankContainer {
+  display: flex;
+}
+
 #newBookRankingList {
   display: grid;
   grid-template-rows: repeat(3, auto);
+  /*往右侧偏移一些*/
+  margin-left: 2vw;
 
   place-items: center;
   grid-gap: 4px;
@@ -224,10 +231,12 @@ p {
   margin-top: 4px;
   justify-self: start;
   margin-bottom: 4px;
+  font-size: 2vh;
+  left: 20%;
 }
 
 #BorrowReturnContent {
   display: grid;
   grid-template-columns: 2fr 4fr;
-  grid-gap: 8px;
+  grid-gap: 1.5vh;
 }
