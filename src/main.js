@@ -51,12 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("Failed to process data:", error);
     });
-  // render_2_1();
-  // render_2_2();
-  // render_2_3();
-  // render_3_1();
-  // render_3_2();
-  // render_3_3();
+
+  loadData03().then(data03 => {
+    render_3_2(data03);
+  }).catch(error => {
+    console.error('Failed to process data:', error);
+  });
+  loadData07().then(data07 => {
+    render_3_3(data07.data);
+  }).catch(error => {
+    console.error('Failed to process data:', error);
+  });
+
 });
 
 async function loadData01() {
@@ -105,6 +111,7 @@ async function loadData05() {
     return console.error("Error loading JSON:", error);
   }
 }
+
 async function loadData06() {
   try {
     const response = await fetch(
@@ -115,11 +122,13 @@ async function loadData06() {
     return console.error("Error loading JSON:", error);
   }
 }
+
 async function loadData07() {
   try {
-    const response = await fetch("./data/02-2023年全年入馆数据.json");
+    const response = await fetch('./data/07-231101-240331小组学习面试空间预约情况.json');
     return await response.json();
   } catch (error) {
-    return console.error("Error loading JSON:", error);
+    return console.error('Error loading JSON:', error);
   }
 }
+
