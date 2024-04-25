@@ -11,6 +11,7 @@ import render_3_3 from "./components/component_3_3.js";
 // main.js
 document.addEventListener("DOMContentLoaded", function () {
   render_bar();
+
   loadData01()
     .then((data01) => {
       render_1_3(data01.RECORDS);
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("Failed to process data:", error);
     });
+
   loadData05()
     .then((data05) => {
       render_1_2(data05.RECORDS);
@@ -33,9 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("Failed to process data:", error);
     });
+
   loadData04()
     .then((data04) => {
       render_2_2(data04.data);
+    })
+    .catch((error) => {
+      console.error("Failed to process data:", error);
+    });
+
+  loadData06()
+    .then((data06) => {
+      render_2_3(data06.data);
     })
     .catch((error) => {
       console.error("Failed to process data:", error);

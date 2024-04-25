@@ -82,7 +82,7 @@ function refreshBorrowingRank(mode) {
     let pair = curMap[i][0].split(",");
     // console.log(pair);
     list[i].querySelector(".bookName").textContent = pair[0];
-    list[i].querySelector(".author").textContent = pair[1];
+    list[i].querySelector(".author").textContent = "——" + pair[1];
   }
 }
 export default render_2_1;

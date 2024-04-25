@@ -191,6 +191,15 @@ html {
   grid-template-columns: repeat(4, 1fr); /* 将容器分成四列，每列宽度相等 */
   grid-gap: 8px; /* 设置容器之间的间距 */
 }
+
+.author {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+}
+.bookName {
+  font-size: 16px;
+}
 .rank {
   color: yellow;
   font-weight: 500;
