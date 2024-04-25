@@ -50,6 +50,7 @@ function render_2_3(data) {
       axisPointer: {
         type: "shadow",
       },
+      formatter:"{b}<br />{a0}: {c0}人<br />{a1}: {c1}小时"
     },
     grid: {
       left: "3%",
