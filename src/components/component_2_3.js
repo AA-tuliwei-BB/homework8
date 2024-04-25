@@ -55,7 +55,7 @@ function render_2_3(data) {
       left: "3%",
       right: "4%",
       bottom: "3%",
-      top: "10%",
+      top: "20%",
       containLabel: true,
     },
     xAxis: [
@@ -65,16 +65,37 @@ function render_2_3(data) {
         axisTick: {
           alignWithLabel: true,
         },
+        axisLabel: {
+          textStyle: {
+            color: "#ffffff",
+          },
+        },
       },
     ],
     yAxis: [
       {
         type: "value",
+        axisLabel: {
+          textStyle: {
+            color: "#ffffff",
+          },
+        },
       },
       {
         type: "value",
+        axisLabel: {
+          textStyle: {
+            color: "#ffffff",
+          },
+        },
       },
     ],
+    legend: {
+      data: ["预约人数", "预约时长"],
+      textStyle: {
+        color: "#ffffff",
+      },
+    },
     series: [
       {
         name: "预约人数",
