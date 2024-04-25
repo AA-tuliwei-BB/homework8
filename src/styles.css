@@ -219,3 +219,9 @@ p {
   margin-top: 4px;
   margin-bottom: 4px;
 }
+
+#BorrowReturnContent {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  grid-gap: 8px;
+}

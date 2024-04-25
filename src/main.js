@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data01) => {
       render_1_3(data01.RECORDS);
       render_2_1(data01.RECORDS);
+      render_3_1(data01.RECORDS);
       loadData02()
         .then((data02) => {
           render_1_1(data02.RECORDS, data01.RECORDS);
